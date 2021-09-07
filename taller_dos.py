@@ -39,3 +39,21 @@ if (numero > 0 and numero <= 100):
         print(f'Su descuento es de ${total:,}')
 else:
     print('Número no valido')
+
+# 3.
+fianza = float(input('Ingrese el valor de su fianza: '))
+cuotas = int(input('Ingrese el número de cuotas: '))
+total = fianza * cuotas
+if (fianza > 0):
+    if (fianza >= 50000):
+        pago_cuota = 2/100
+        monto = total * pago_cuota
+        total = total + monto
+        print(f'La cuota a pagar es por la afianzadora es de ${total:,}')
+    else:
+        pago_cuota = 3/100
+        monto = total * pago_cuota
+        total = total + monto
+        print(f'La cuota a pagar es por la afianzadora es de ${total:,}')
+else:
+    print('Valor invalido')
