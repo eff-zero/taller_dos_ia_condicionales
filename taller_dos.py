@@ -57,3 +57,20 @@ if (fianza > 0):
         print(f'La cuota a pagar es por la afianzadora es de ${total:,}')
 else:
     print('Valor invalido')
+
+# 4.
+promedio = int(input('Ingrese su promedio de contaminación: '))
+if (promedio > 0):
+    if (promedio > 170):
+        multa = 50/100
+        ganancia_diaria = float(input('Ingrese su ganancia diaria promedio: '))
+        dias = 5
+        total_sin_descuento = ganancia_diaria * dias
+        descuento_dia = ganancia_diaria * multa
+        descuento_total = total_sin_descuento * multa
+        print(f'Usted se le descontará ${descuento_dia:,} diariamente'
+              f' y su descuento final a la semana es de ${descuento_total:,}')
+    else:
+        print('Usted no aplica para multa')
+else:
+    print('Promedio invalido')
