@@ -138,3 +138,32 @@ if (precio_producto > 0):
         print(f'El valor final del producto es ${valor_final:,}')
 else:
     print('Precio no valido')
+
+# 8.
+monto_compra = float(input('Ingrese el monto total de la compra: '))
+pago_mayor_a_500 = {'Propio': 0.55, 'Banco': 0.30, 'Crédito': 0.15}  # > 500K
+pago_menor_a_500 = {'Propio': 0.70, 'Banco': 0, 'Crédito': 0.30}  # < 500K
+interes_fabricante = 0.20
+if (monto_compra > 0):
+    if (monto_compra > 500000):
+        inversión_propia = monto_compra * pago_mayor_a_500['Propio']
+        prestamo = monto_compra * pago_mayor_a_500['Banco']
+        credito = monto_compra * pago_mayor_a_500['Crédito']
+        valor_interes = interes_fabricante * credito
+        print(f'Cantidad a invertir por la empresa » ${inversión_propia:,}\n'
+              f'Valor del préstamo del banco » ${prestamo:,}\n'
+              f'Valor del crédito con el fabricante » ${credito:,}\n'
+              f'Valor del interés del fabricante » ${valor_interes:,}\n'
+              )
+    else:
+        inversión_propia = monto_compra * pago_menor_a_500['Propio']
+        prestamo = monto_compra * pago_menor_a_500['Banco']
+        credito = monto_compra * pago_menor_a_500['Crédito']
+        valor_interes = interes_fabricante * credito
+        print(f'Cantidad a invertir por la empresa » ${inversión_propia:,}\n'
+              f'Valor del préstamo del banco » ${prestamo:,}\n'
+              f'Valor del crédito con el fabricante » ${credito:,}\n'
+              f'Valor del interés del fabricante » ${valor_interes:,}\n'
+              )
+else:
+    print('Monto invalido')
