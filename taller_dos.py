@@ -86,3 +86,26 @@ if (decremento_carro > 0 and incremento_terreno > 0):
         print('Usted debería comprar el terreno')
 else:
     print('Algún valor no es valido')
+
+# 6.
+precio_compu = 11000
+cantidad_compu = int(input('Ingrese la cantidad de computadoras: '))
+total_sin_descuento = cantidad_compu * precio_compu
+if (cantidad_compu > 0):
+    if (cantidad_compu < 5):
+        descuento = 10/100
+        valor_descuento = total_sin_descuento * descuento
+        valor_final = total_sin_descuento - valor_descuento
+        print(f'Descuento: ${valor_descuento:,}, debe pagar: ${valor_final:,}')
+    elif (cantidad_compu > 4 and cantidad_compu < 10):
+        descuento = 20/100
+        valor_descuento = total_sin_descuento * descuento
+        valor_final = total_sin_descuento - valor_descuento
+        print(f'Descuento: ${valor_descuento:,}, debe pagar: ${valor_final:,}')
+    else:
+        descuento = 40/100
+        valor_descuento = total_sin_descuento * descuento
+        valor_final = total_sin_descuento - valor_descuento
+        print(f'Descuento: ${valor_descuento:,}, debe pagar: ${valor_final:,}')
+else:
+    print('Cantidad de computadoras no valido')
