@@ -167,3 +167,14 @@ if (monto_compra > 0):
               )
 else:
     print('Monto invalido')
+
+# 9.
+numero_1 = float(input('Ingrese su primer número: '))
+numero_2 = float(input('Ingrese su segundo número: '))
+if (numero_1 > numero_2):
+    resultado = numero_1 - numero_2
+elif (numero_1 < numero_2):
+    resultado = numero_1 + numero_2
+else:
+    resultado = numero_1 * numero_2
+print(f'El resultado de su operacion según la comparación es » {resultado}')
