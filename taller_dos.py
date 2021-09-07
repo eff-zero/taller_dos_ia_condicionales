@@ -43,20 +43,20 @@ else:
 # 3.
 fianza = float(input('Ingrese el valor de su fianza: '))
 cuotas = int(input('Ingrese el número de cuotas: '))
-total = fianza * cuotas
-if (fianza > 0):
+total_fianza = fianza * cuotas
+if (fianza > 0 and cuotas > 0):
     if (fianza >= 50000):
-        pago_cuota = 2/100
-        monto = total * pago_cuota
-        total = total + monto
+        cuota = 2/100
+        monto = total_fianza * cuota
+        total = total_fianza + monto
         print(f'La cuota a pagar es por la afianzadora es de ${total:,}')
     else:
-        pago_cuota = 3/100
-        monto = total * pago_cuota
-        total = total + monto
+        cuota = 3/100
+        monto = total_fianza * cuota
+        total = total_fianza + monto
         print(f'La cuota a pagar es por la afianzadora es de ${total:,}')
 else:
-    print('Valor invalido')
+    print('Valor invalido de fianza o de cuotas')
 
 # 4.
 promedio = int(input('Ingrese su promedio de contaminación: '))
@@ -89,9 +89,9 @@ else:
 
 # 6.
 precio_compu = 11000
-cantidad_compu = int(input('Ingrese la cantidad de computadoras: '))
-total_sin_descuento = cantidad_compu * precio_compu
+cantidad_compu = int(input('Ingrese la cantidad de computadoras a comprar: '))
 if (cantidad_compu > 0):
+    total_sin_descuento = cantidad_compu * precio_compu
     if (cantidad_compu < 5):
         descuento = 10/100
         valor_descuento = total_sin_descuento * descuento
@@ -111,30 +111,30 @@ else:
     print('Cantidad de computadoras no valido')
 
 # 7.
-iva = 16/100
+iva = 1 + (16/100)
 precio_producto = float(input('Ingrese el precio de su producto: '))
 es_nosy = int(input('Ingrese [0 ó 1] si\n 1 » Sí\n 0 » No\n »» '))
 if (precio_producto > 0):
     if (precio_producto > 2000 and es_nosy):
         descuento = 15/100
         valor_descuento = precio_producto * descuento
-        valor_final = (precio_producto - valor_descuento) * (1 + iva)
+        valor_final = (precio_producto - valor_descuento) * iva
         print(f'El valor final del producto es ${valor_final:,}')
     elif (precio_producto > 2000):
         descuento = 10/100
         valor_descuento = precio_producto * descuento
-        valor_final = (precio_producto - valor_descuento) * (1 + iva)
+        valor_final = (precio_producto - valor_descuento) * iva
         valor_final = round(valor_final, 2)
         print(f'El valor final del producto es ${valor_final:,}')
     elif (es_nosy):
         descuento = 5/100
         valor_descuento = precio_producto * descuento
-        valor_final = (precio_producto - valor_descuento) * (1 + iva)
+        valor_final = (precio_producto - valor_descuento) * iva
         print(f'El valor final del producto es ${valor_final:,}')
     else:
         descuento = 0
         valor_descuento = precio_producto * descuento
-        valor_final = (precio_producto - valor_descuento) * (1 + iva)
+        valor_final = (precio_producto - valor_descuento) * iva
         print(f'El valor final del producto es ${valor_final:,}')
 else:
     print('Precio no valido')
@@ -178,3 +178,14 @@ elif (numero_1 < numero_2):
 else:
     resultado = numero_1 * numero_2
 print(f'El resultado de su operacion según la comparación es » {resultado}')
+
+# 10.
+numero_1 = float(input('Ingrese su primer número: '))
+numero_2 = float(input('Ingrese su segundo número: '))
+numero_3 = float(input('Ingrese su tercer número: '))
+numeros = [numero_1, numero_2, numero_3]
+mayor = numero_1
+for n in numeros:
+    if (n > mayor):
+        mayor = n
+print(f'El número mayor es » {mayor}')
