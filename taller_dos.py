@@ -24,3 +24,18 @@ if (cantidad_camisas > 0):
         print(f'Su total a pagar es ${total:,}')
 else:
     print(f'La cantidad {cantidad_camisas} de camisas es invalida')
+
+# 2.
+numero = int(input('Ingrese un número entre [1-100]: '))
+monto_a_pagar = float(input('Ingrese el valor de su compra: '))
+if (numero > 0 and numero <= 100):
+    if (numero < 74):
+        descuento = 0.15
+        total = monto_a_pagar * descuento
+        print(f'Su descuento es de ${total:,}')
+    elif (numero >= 74):
+        descuento = 0.20
+        total = monto_a_pagar * descuento
+        print(f'Su descuento es de ${total:,}')
+else:
+    print('Número no valido')
