@@ -109,3 +109,32 @@ if (cantidad_compu > 0):
         print(f'Descuento: ${valor_descuento:,}, debe pagar: ${valor_final:,}')
 else:
     print('Cantidad de computadoras no valido')
+
+# 7.
+iva = 16/100
+precio_producto = float(input('Ingrese el precio de su producto: '))
+es_nosy = int(input('Ingrese [0 ó 1] si\n 1 » Sí\n 0 » No\n »» '))
+if (precio_producto > 0):
+    if (precio_producto > 2000 and es_nosy):
+        descuento = 15/100
+        valor_descuento = precio_producto * descuento
+        valor_final = (precio_producto - valor_descuento) * (1 + iva)
+        print(f'El valor final del producto es ${valor_final:,}')
+    elif (precio_producto > 2000):
+        descuento = 10/100
+        valor_descuento = precio_producto * descuento
+        valor_final = (precio_producto - valor_descuento) * (1 + iva)
+        valor_final = round(valor_final, 2)
+        print(f'El valor final del producto es ${valor_final:,}')
+    elif (es_nosy):
+        descuento = 5/100
+        valor_descuento = precio_producto * descuento
+        valor_final = (precio_producto - valor_descuento) * (1 + iva)
+        print(f'El valor final del producto es ${valor_final:,}')
+    else:
+        descuento = 0
+        valor_descuento = precio_producto * descuento
+        valor_final = (precio_producto - valor_descuento) * (1 + iva)
+        print(f'El valor final del producto es ${valor_final:,}')
+else:
+    print('Precio no valido')
