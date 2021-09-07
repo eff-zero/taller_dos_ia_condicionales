@@ -74,3 +74,15 @@ if (promedio > 0):
         print('Usted no aplica para multa')
 else:
     print('Promedio invalido')
+
+# 5.
+print('» Al cabo de tres años ingrese «')
+decremento_carro = float(input('Valor de devaluación del carro: '))
+incremento_terreno = float(input('Valor del incremento del terreno: '))
+if (decremento_carro > 0 and incremento_terreno > 0):
+    if (decremento_carro < incremento_terreno/2):
+        print('Usted debería comprar el carro')
+    else:
+        print('Usted debería comprar el terreno')
+else:
+    print('Algún valor no es valido')
